@@ -8,7 +8,7 @@ const GenreSchema = new Schema({
         required: true,
         minLength: 3,
         maxLength: 100,
-        enum: ["Fiction", "Non-Fiction", "Romance", "History", "Sci-Fi", "Fantasy"],
+        enum: ["Fiction", "Non-Fiction", "Romance", "History", "Science Fiction", "Fantasy", "French Poetry"],
     }
 });
 
