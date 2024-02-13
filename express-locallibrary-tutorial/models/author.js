@@ -40,5 +40,19 @@ AuthorSchema.virtual("date_of_death_formatted").get(function() {
     : '';
 });
 
+AuthorSchema.virtual("lifespan").get(function() {
+  let lifespan = "";
+  if (this.date_of_birth_formatted.length > 0) {
+    lifespan = this.date_of_birth_formatted;
+    lifespan += " - ";
+
+    if (this.date_of_death_formatted.length > 0) {
+      lifespan += this.date_of_death_formatted;
+    }
+  }
+
+  return lifespan;
+})
+
 // Export model
 module.exports = mongoose.model("Author", AuthorSchema);
